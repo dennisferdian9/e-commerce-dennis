@@ -5,7 +5,6 @@ export const getAllProductFromDB = async (skip: number, limit: number) => {
     `http://localhost:8080/products?limit=${limit}&skip=${skip}`,
   );
   const products = (await data.json()) as ProductResponse;
-  console.log(products);
   return products;
 };
 
@@ -13,7 +12,6 @@ export const getProductFromDB = async (id: number) => {
   try {
     const data = await fetch('http://localhost:8080/product/' + id);
     const products = (await data.json()) as ProductResponse;
-    console.log(products);
 
     return products.data;
   } catch (error) {
@@ -24,7 +22,6 @@ export const getProductFromDB = async (id: number) => {
 
 export const postProductFromDB = async (product: ProductModel) => {
   try {
-    console.log('isi product', product);
     const data = await fetch('http://localhost:8080/product/', {
       method: 'POST',
       headers: {
@@ -40,7 +37,6 @@ export const postProductFromDB = async (product: ProductModel) => {
       }),
     });
     const products = (await data.json()) as ProductResponse;
-    console.log(products.data);
     return await saveToLocalDB({ ...products.data, ...product });
   } catch (error) {
     console.error('Error fetching product:', error);

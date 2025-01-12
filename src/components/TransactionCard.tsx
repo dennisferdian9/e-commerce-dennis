@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import UpRightIcon from '@/assets/up-right.svg';
- type PropsModel = {
+type PropsModel = {
   id: number;
   sku: string;
   quantity: number;
@@ -14,7 +14,7 @@ export default function TransactionCard({
     console.log(id);
   };
   return (
-    <div className="w-full h-max flex shadow-md justify-between px-4 py-3">
+    <div className="w-full h-max  shadow-md px-4 py-3">
       <div>
         <h3 className="text-lg md:text-2xl font-bold">
           {sku} <span className="font-normal">{sku}</span>
@@ -28,7 +28,6 @@ export default function TransactionCard({
           <Image width={10} height={10} src={UpRightIcon} alt="open detail" />
         </button>
       </div>
-      <div></div>
     </div>
   );
 }

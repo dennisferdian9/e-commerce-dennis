@@ -32,6 +32,7 @@ export default function ProductCardList() {
 
   useEffect(() => {
     fetchProducts(0);
+    return;
   }, [fetchProducts]);
 
   useEffect(() => {

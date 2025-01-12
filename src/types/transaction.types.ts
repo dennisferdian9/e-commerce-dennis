@@ -8,3 +8,7 @@ export type Transaction = {
 export type TransactionListResponse = {
   data: Transaction[];
 };
+
+export type TransactionResponse = {
+  data: Transaction;
+};
